@@ -16,7 +16,7 @@ import javax.persistence.Table;
 public class CafeManha {
 
 	@Id
-	@Column(name = "ID", nullable = false)
+	@Column(name = "ID_CAFE", nullable = false)
 	@GeneratedValue(generator = "S_ID_CAFE")
 	@SequenceGenerator(name = "S_ID_CAFE", sequenceName = "S_ID_CAFE", allocationSize = 1)
 	private int id;

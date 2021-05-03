@@ -5,12 +5,13 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	template="/modelo.xhtml">
+	template="/templates/modeloAgenda.xhtml">
 
 	<ui:define name="menu">
-		<ui:include src="/menu.xhtml" />
+		<ui:include src="/includes/menu.xhtml" />
 	</ui:define>
-<ui:define name="conteudo">
+
+	<ui:define name="conteudo">
 		<h:form>
 			<p:messages autoUpdate="true" id="msg" />
 			<p:toolbar>
@@ -22,7 +23,6 @@
 						action="#{ClienteBean.pesquisar}" update="@form"></p:commandButton>
 				</p:toolbarGroup>
 			</p:toolbar>
-			<br/>
 			<p:fieldset legend="Cadrastro">
 				<p:panelGrid columns="2">
 					<h:outputLabel value="Nome" for="name"></h:outputLabel>
@@ -33,7 +33,7 @@
 					<p:inputMask mask="999.999.999-99"
 						value="#{ClienteBean.cliente.cpf}"></p:inputMask>
 
-					<h:outputLabel value="Café da Manhã"></h:outputLabel>
+					<h:outputLabel value="Interesses"></h:outputLabel>
 					<p:inputTextarea value="#{ClienteBean.cliente.interesses}" rows="3"
 						cols="50" maxlength="4000"
 						counterTemplate="{0} Maximo de Caracteres." autoResize="false" />
@@ -49,8 +49,13 @@
 					<p:column headerText="CPF" sortBy="#{cliente.cpf}">
 						<h:outputText value="#{cliente.cpf}"></h:outputText>
 					</p:column>
-					
-					<p:column headerText="Café da Manhã">
+					<p:column headerText="Sexo" sortBy="#{cliente.sexo}">
+						<h:outputText value="#{cliente.sexo}"></h:outputText>
+					</p:column>
+					<p:column headerText="Idade" sortBy="#{cliente.idade}">
+						<h:outputText value="#{cliente.idade}"></h:outputText>
+					</p:column>
+					<p:column headerText="Interesses">
 						<h:outputText value="#{cliente.interesses}"></h:outputText>
 					</p:column>
 					<p:column width="80">
@@ -64,6 +69,6 @@
 
 		</h:form>
 	</ui:define>
-	
 
 </ui:composition>
+

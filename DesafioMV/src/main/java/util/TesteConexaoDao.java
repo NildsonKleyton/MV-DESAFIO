@@ -17,20 +17,19 @@ public class TesteConexaoDao {
 		CafeManha cf =new CafeManha();
 		CafeManha cf1 =new CafeManha();
 		
-		cb.setCpf("12345678901");
-		cb.setNome("teste");
+		cb.setCpf("12345678903");
+		cb.setNome("teste3");
 		
-		cf.setId(1);
-		cf.setItemCafe("Café");
+		cf.setItemCafe("Suco abacaxi");
 		cf.setColaborador(cb);
 		
-		cf1.setId(2);
-		cf1.setItemCafe("Pão");
+		cf1.setItemCafe("queijo");
 		cf1.setColaborador(cb);
 		
 		dao.inserir(cb);
 		dao.inserir(cf);
 		dao.inserir(cf1);
+		
 	}
 
 }

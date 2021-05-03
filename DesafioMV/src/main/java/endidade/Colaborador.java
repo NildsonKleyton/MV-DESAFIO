@@ -13,14 +13,20 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "COLABORADOR")
 public class Colaborador {
+
 	@Id
 	@Column (name = "CPF", nullable = false)
 	private String cpf;
 	@Column(name = "NOME", nullable = false)
 	private String nome;
-
 	@OneToMany (mappedBy = "colaborador", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<CafeManha> listaCafe;
+
+	@Override
+	public String toString() {
+		return "Colaborador [cpf=" + cpf + ", nome=" + nome + ", listaCafe=" + listaCafe + "]";
+	}
+
 	
 	public String getCpf() {
 		return cpf;

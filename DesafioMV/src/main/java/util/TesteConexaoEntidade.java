@@ -11,25 +11,24 @@ public class TesteConexaoEntidade {
 		
 		EntityManager ent = JpaUtil.getEntityManager();
 		EntityTransaction t = ent.getTransaction();
+		
 		t.begin();
 
 		Colaborador cb = new Colaborador();
 		CafeManha cf =new CafeManha();
 		CafeManha cf1 =new CafeManha();
 		
-		cb.setCpf("98765432100");
+		cb.setCpf("11122233345");
 		cb.setNome("teste");
-		ent.persist(cb);
+		ent.merge(cb);
 		
-//		cf.setId(1);
 		cf.setItemCafe("Café");
 		cf.setColaborador(cb);
-		ent.persist(cf);
+		ent.merge(cf);
 		
-//		cf1.setId(2);
-		cf1.setItemCafe("Pão");
-		cf1.setColaborador(cb);
-		ent.persist(cf);
+//		cf1.setItemCafe("Pão");
+//		cf1.setColaborador(cb);
+//		ent.merge(cf);
 		
 		t.commit();
 		ent.close();
