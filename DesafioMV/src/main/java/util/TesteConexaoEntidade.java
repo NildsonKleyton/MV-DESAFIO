@@ -3,8 +3,8 @@ package util;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
-import endidade.CafeManha;
-import endidade.Colaborador;
+import entidade.CafeManha;
+import entidade.Colaborador;
 public class TesteConexaoEntidade {
 
 	public static void main(String[] args) {

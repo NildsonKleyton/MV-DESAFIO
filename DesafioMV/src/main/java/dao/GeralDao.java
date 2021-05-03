@@ -2,7 +2,7 @@ package dao;
 
 import java.util.List;
 
-import endidade.Colaborador;
+import entidade.Colaborador;
 /**
  * 
  * @author Nildson Kleyton

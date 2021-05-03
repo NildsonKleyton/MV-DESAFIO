@@ -5,8 +5,8 @@ import javax.persistence.EntityTransaction;
 
 import dao.GeralDao;
 import dao.GeralDaoImpl;
-import endidade.CafeManha;
-import endidade.Colaborador;
+import entidade.CafeManha;
+import entidade.Colaborador;
 
 public class TesteConexaoDao {
 
