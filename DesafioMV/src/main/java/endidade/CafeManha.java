@@ -23,19 +23,10 @@ public class CafeManha {
 	@Column(name = "ITEMCAFE", nullable = false)
 	private String itemCafe;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne
 	@JoinColumn(name = "CPFCOLABORADOR", referencedColumnName = "CPF", nullable = false)
 	private Colaborador colaborador;
 	
-	@Override
-	public boolean equals(Object obj) {
-		CafeManha cafemanha = (CafeManha) obj;
-		if (this.itemCafe.equalsIgnoreCase(cafemanha.getItemCafe())) {
-			return true;
-		} else {
-			return false;
-		}
-	}
 	
 	public int getId() {
 		return id;

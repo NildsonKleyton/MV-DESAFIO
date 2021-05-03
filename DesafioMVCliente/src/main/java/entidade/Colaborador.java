@@ -7,6 +7,18 @@ public class Colaborador {
 	private String nome;
 
 	private List<CafeManha> listaCafe;
+
+	@Override
+	public boolean equals(Object obj) {
+		Colaborador colaboradorEntrada = (Colaborador) obj;
+
+		if (this.cpf.equalsIgnoreCase(colaboradorEntrada.getCpf())) {
+			return true;
+		} else {
+			return false;
+		}
+	}	
+	
 	public String getCpf() {
 		return cpf;
 	}
@@ -31,14 +43,4 @@ public class Colaborador {
 		this.listaCafe = listaCafe;
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		Colaborador colaboradorEntrada = (Colaborador) obj;
-
-		if (this.cpf.equalsIgnoreCase(colaboradorEntrada.getCpf())) {
-			return true;
-		} else {
-			return false;
-		}
-	}
 }
