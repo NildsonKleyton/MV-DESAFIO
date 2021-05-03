@@ -20,7 +20,7 @@ Ex. Fulano de Tal, CPF: 732.442.160-13 e Suco de Acerola.
 - [x] Lista de participantes com suas opções
 
 ### Envio do Desafio
-- [] Deverá ser hospedado no heroku ou outro servidor de aplicação e disponibilizado o link da aplicação funcionando + o link no github. Lembrando que este teste não é eliminatório serve apenas para avaliar seu nível de conhecimento :) 
+- [ ] Deverá ser hospedado no heroku ou outro servidor de aplicação e disponibilizado o link da aplicação funcionando + o link no github. Lembrando que este teste não é eliminatório serve apenas para avaliar seu nível de conhecimento :) 
 
 Você deverá enviar o link do teste finalizado até a segunda dia 03/05 ao 12h. 
 
