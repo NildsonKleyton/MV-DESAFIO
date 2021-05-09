@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/modelo.xhtml">
+
+	<ui:define name="menu">
+		<ui:include src="/menu.xhtml" />
+	</ui:define>
+<ui:define name="conteudo">
+		<h:form>
+			<p:messages autoUpdate="true" id="msg" />
+			<p:toolbar>
+				<p:toolbarGroup>
+					<p:commandButton value="Adicionar" icon="pi pi-save"
+						action="#{colaboradorBean.adicionar}" update="@form"
+						style="margin-right:5px;"></p:commandButton>
+					<p:commandButton value="Pesquisar" icon="pi pi-search"
+						action="#{colaboradorBean.pesquisar}" update="@form"></p:commandButton>
+				</p:toolbarGroup>
+			</p:toolbar>
+			<br/>
+			<p:fieldset legend="Cadrastro">
+				<p:panelGrid columns="2">
+					<h:outputLabel value="Nome" for="name"></h:outputLabel>
+					<p:inputText id="nome" value="#{colaboradorBean.colaborador.nome}"
+						requiredMessage="Nome é obrigatorio"></p:inputText>
+
+					<h:outputLabel value="CPF"></h:outputLabel>
+					<p:inputMask mask="999.999.999-99"
+						value="#{colaboradorBean.colaborador.cpf}"></p:inputMask>
+
+					<h:outputLabel value="Café da Manhã"></h:outputLabel>
+					<p:inputTextarea value="#{colaboradorBean.cafe.itemCafe}" rows="3"
+						cols="50" maxlength="4000"
+						counterTemplate="{0} Maximo de Caracteres." autoResize="false" />
+				</p:panelGrid>
+			</p:fieldset>
+			<br/>
+			<p:fieldset legend="Lista de Clientes">
+				<p:dataTable value="#{colaboradorBean.listarColaborador}" var="cliente"
+					scrollable="true" scrollHeight="" scrollWidth="100%">
+					<p:column id="name" headerText="Nome" sortBy="#{colaborador.nome}">
+						<h:outputText value="#{colaborador.nome}"></h:outputText>
+					</p:column>
+					<p:column headerText="CPF" sortBy="#{colaborador.cpf}">
+						<h:outputText value="#{colaborador.cpf}"></h:outputText>
+					</p:column>
+					
+					<p:column headerText="Café da Manhã">
+						<h:outputText value="#{colaborador.listaCafe}"></h:outputText>
+					</p:column>
+					<p:column width="80">
+						<p:commandButton action="#{colaboradorBean.editar}" update="@form"
+							icon="pi pi-pencil" title="Editar" style="margin-right:5px;"></p:commandButton>
+						<p:commandButton action="#{colaboradorBean.remover}" update="@form"
+							icon="pi pi-trash" title="Remover"></p:commandButton>
+					</p:column>
+				</p:dataTable>
+			</p:fieldset>
+
+		</h:form>
+	</ui:define>
+	
+
+</ui:composition>
