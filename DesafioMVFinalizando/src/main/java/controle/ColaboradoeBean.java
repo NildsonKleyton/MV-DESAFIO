@@ -11,7 +11,7 @@ import dao.GeralDaoImpl;
 import entidade.CafeManha;
 import entidade.Colaborador;
 
-@ManagedBean(name = "ColaboradoeBean")
+@ManagedBean(name = "colaboradorBean")
 @RequestScoped
 public class ColaboradoeBean {
 
