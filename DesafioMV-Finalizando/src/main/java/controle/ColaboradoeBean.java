@@ -11,7 +11,7 @@ import dao.GeralDaoImpl;
 import entidade.CafeManha;
 import entidade.Colaborador;
 
-@ManagedBean(name = "colaboradorBean")
+@ManagedBean(name = "ColaboradoeBean")
 @RequestScoped
 public class ColaboradoeBean {
 
@@ -23,17 +23,16 @@ public class ColaboradoeBean {
 	public ColaboradoeBean() {
 		this.colaborador =new Colaborador();
 		this.cafe= new CafeManha();
-		this.listarColaborador = new ArrayList<>();
+		this.listarColaborador = new ArrayList<Object>();
 	}
 	
 	//metodos
 	public void adicionar() {
 		this.geralDao.inserir(colaborador);
-		this.geralDao.inserir(cafe);
 	}
 
 	public void pesquisar() {
-		this.listarColaborador = geralDao.consulta(this.listarColaborador);
+		this.listarColaborador = geralDao.consulta(this.colaborador);
 	}
 
 	public void editar() {
