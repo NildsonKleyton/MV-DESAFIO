@@ -39,7 +39,7 @@
 
 					<h:outputLabel value="Café da Manhã"></h:outputLabel>
 					<p:inputTextarea value="#{colaboradorBean.colaborador.listaCafe}"
-						rows="3" cols="50" maxlength="4000"
+						rows="3" cols="22" maxlength="4000"
 						counterTemplate="{0} Maximo de Caracteres." autoResize="false" />
 
 				</p:panelGrid>
@@ -61,8 +61,8 @@
 					<p:column headerText="Café da Manhã">
 						<h:outputText value="#{colaborador.listaCafe}"></h:outputText>
 					</p:column>
-					<!-- botões remover e editar -->
-					<p:column width="80">
+					<!-- botões remover e editar na lista -->
+					<p:column headerText="Editar ou Remover" width="80">
 						<p:commandButton action="#{colaboradorBean.editar}" update="@form"
 							icon="pi pi-pencil" title="Editar" style="margin-right:5px;"></p:commandButton>
 						<p:commandButton action="#{colaboradorBean.remover}"
