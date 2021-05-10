@@ -3,6 +3,7 @@ package util;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
+import antlr.collections.List;
 import dao.GeralDao;
 import dao.GeralDaoImpl;
 import entidade.CafeManha;
@@ -17,18 +18,21 @@ public class TesteConexaoDao {
 		CafeManha cf =new CafeManha();
 		CafeManha cf1 =new CafeManha();
 		
-		cb.setCpf("12345678903");
-		cb.setNome("teste3");
+//		cb.setCpf("11111111122");
+//		cb.setNome("teste1");
+//		
+//		cf.setItemCafe("Suco goiaba");
+//		cf.setColaborador(cb);
+//		
+//		cf1.setItemCafe("pão queijo");
+//		cf1.setColaborador(cb);
+//		
+//		dao.inserir(cb);
+//		dao.inserir(cf);
+//		dao.inserir(cf1);
 		
-		cf.setItemCafe("Suco abacaxi");
-		cf.setColaborador(cb);
 		
-		cf1.setItemCafe("queijo");
-		cf1.setColaborador(cb);
-		
-		dao.inserir(cb);
-		dao.inserir(cf);
-		dao.inserir(cf1);
+		dao.consulta(cb);
 		
 	}
 

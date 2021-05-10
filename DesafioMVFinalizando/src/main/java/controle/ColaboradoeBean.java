@@ -29,6 +29,7 @@ public class ColaboradoeBean {
 	//metodos
 	public void adicionar() {
 		this.geralDao.inserir(colaborador);
+		this.geralDao.inserir(cafe);
 	}
 
 	public void pesquisar() {
