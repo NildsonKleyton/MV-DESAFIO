@@ -18,18 +18,18 @@ public class TesteConexaoDao {
 		CafeManha cf =new CafeManha();
 		CafeManha cf1 =new CafeManha();
 		
-		cb.setCpf("12345678900");
-		cb.setNome("teste0");
-		
-		cf.setItemCafe("Mortadela");
-		cf.setColaborador(cb);
-		
-		cf1.setItemCafe("Ovo");
-		cf1.setColaborador(cb);
-		
-		dao.inserir(cb);
-		dao.inserir(cf);
-		dao.inserir(cf1);
+//		cb.setCpf("12345678900");
+//		cb.setNome("teste0");
+//		
+//		cf.setItemCafe("Mortadela");
+//		cf.setColaborador(cb);
+//		
+//		cf1.setItemCafe("Ovo");
+//		cf1.setColaborador(cb);
+//		
+//		dao.inserir(cb);
+//		dao.inserir(cf);
+//		dao.inserir(cf1);
 		
 		
 		System.out.println(dao.consulta(cb));
