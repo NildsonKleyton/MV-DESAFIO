@@ -38,7 +38,7 @@
 						value="#{colaboradorBean.colaborador.cpf}"></p:inputMask>
 
 					<h:outputLabel value="Café da Manhã"></h:outputLabel>
-					<p:inputTextarea value="#{colaboradorBean.colaborador.listaCafe}"
+					<p:inputTextarea value="#{colaboradorBean.cafe.itemCafe}"
 						rows="3" cols="22" maxlength="4000"
 						counterTemplate="{0} Maximo de Caracteres." autoResize="false" />
 
@@ -47,7 +47,7 @@
 			<br />
 			<!-- Tela da Lista -->
 			<p:fieldset legend="Lista de Clientes">
-				<p:dataTable value="#{colaboradorBean.colaborador}"
+				<p:dataTable value="#{colaboradorBean.listarColaborador}"
 					var="cliente" scrollable="true" scrollHeight="" scrollWidth="100%">
 					
 					<p:column id="name" headerText="Nome" sortBy="#{colaborador.nome}">

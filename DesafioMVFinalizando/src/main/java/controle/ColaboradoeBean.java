@@ -18,22 +18,22 @@ public class ColaboradoeBean {
 	private Colaborador colaborador;
 	private CafeManha cafe;
 	private GeralDaoImpl geralDao;
-	private List<Object> listarColaborador;
+	private List<Colaborador> listarColaborador;
 	
 	public ColaboradoeBean() {
 		this.colaborador =new Colaborador();
 		this.cafe= new CafeManha();
-		this.listarColaborador = new ArrayList<Object>();
+		this.listarColaborador = new ArrayList<Colaborador>();
 	}
 	
 	//metodos
 	public void adicionar() {
-		this.geralDao.inserir(colaborador);
-		this.geralDao.inserir(cafe);
+		this.geralDao.inserir(this.colaborador);
+		this.geralDao.inserir(this.cafe);
 	}
 
 	public void pesquisar() {
-		this.listarColaborador = geralDao.consulta(this.colaborador);
+		geralDao.consulta(this.colaborador);
 	}
 
 	public void editar() {
@@ -43,12 +43,11 @@ public class ColaboradoeBean {
 	public void remover() {
 		this.geralDao.remover(this.colaborador, getColaborador());
 	}
+	
 	//get set
-
 	public Colaborador getColaborador() {
 		return colaborador;
 	}
-
 	public void setColaborador(Colaborador colaborador) {
 		this.colaborador = colaborador;
 	}
@@ -56,7 +55,6 @@ public class ColaboradoeBean {
 	public CafeManha getCafe() {
 		return cafe;
 	}
-
 	public void setCafe(CafeManha cafe) {
 		this.cafe = cafe;
 	}
@@ -64,16 +62,14 @@ public class ColaboradoeBean {
 	public GeralDaoImpl getGeralDao() {
 		return geralDao;
 	}
-
 	public void setGeralDao(GeralDaoImpl geralDao) {
 		this.geralDao = geralDao;
 	}
 
-	public List<Object> getListarColaborador() {
+	public List<Colaborador> getListarColaborador() {
 		return listarColaborador;
 	}
-
-	public void setListarColaborador(List<Object> listarColaborador) {
+	public void setListarColaborador(List<Colaborador> listarColaborador) {
 		this.listarColaborador = listarColaborador;
 	}
 
