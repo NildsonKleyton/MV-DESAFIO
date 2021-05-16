@@ -12,7 +12,7 @@
 	<ui:define name="conteudo">
 		<h:form>
 			<p:messages autoUpdate="true" id="msg" />
-
+			<!-- barra de botões -->
 			<p:toolbar>
 				<p:toolbarGroup>
 					<!-- Botões  -->
@@ -20,7 +20,7 @@
 						action="#{colaboradorBean.adicionar}" update="@form"
 						style="margin-right:5px;"></p:commandButton>
 					<p:commandButton value="Pesquisar" icon="pi pi-search"
-						action="#{colaboradorBean.pesquisar}" update="@form"></p:commandButton>
+						actionListener="#{colaboradorBean.pesquisar}" update="@form"></p:commandButton>
 				</p:toolbarGroup>
 			</p:toolbar>
 
@@ -28,7 +28,6 @@
 			<!-- tela de cadastro -->
 			<p:fieldset legend="Cadrastro">
 				<p:panelGrid columns="2">
-
 					<h:outputLabel value="Nome" for="name"></h:outputLabel>
 					<p:inputText id="nome" value="#{colaboradorBean.colaborador.nome}"
 						requiredMessage="Nome é obrigatorio"></p:inputText>
@@ -40,14 +39,14 @@
 					<p:inputTextarea value="#{colaboradorBean.cafe.itemCafe}"
 						rows="3" cols="22" maxlength="4000"
 						counterTemplate="{0} Maximo de Caracteres." autoResize="false" />
-
 				</p:panelGrid>
 			</p:fieldset>
 			<br />
 			<!-- Tela da Lista -->
 			<p:fieldset legend="Lista de Clientes">
-				<p:dataTable value="#{colaboradorBean.listarColaborador}"
-					var="cliente" scrollable="true" scrollHeight="" scrollWidth="100%">
+				
+				<p:dataTable value="#{colaboradorBean.listarColaborador}" var="colaborador"
+					 scrollable="true" scrollHeight="true" scrollWidth="100%" emptyMessage="Pressione pesquisa para buscar todos os clientes...">
 					
 					<p:column id="name" headerText="Nome" sortBy="#{colaborador.nome}">
 						<h:outputText value="#{colaborador.nome}"></h:outputText>
