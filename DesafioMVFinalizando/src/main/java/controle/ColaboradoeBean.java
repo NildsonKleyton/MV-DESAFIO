@@ -23,12 +23,14 @@ public class ColaboradoeBean {
 	public ColaboradoeBean() {
 		this.colaborador =new Colaborador();
 		this.cafe= new CafeManha();
+		this.geralDao = new GeralDaoImpl();
 		this.listarColaborador = new ArrayList<Colaborador>();
 	}
 	
 	//metodos
 	public void adicionar() {
 		this.geralDao.inserir(this.colaborador);
+		cafe.setColaborador(colaborador);
 		this.geralDao.inserir(this.cafe);
 	}
 
