@@ -27,6 +27,11 @@ public class CafeManha {
 	@JoinColumn(name = "CPFCOLABORADOR", referencedColumnName = "CPF", nullable = false)
 	private Colaborador colaborador;
 	
+	@Override
+	public String toString() {
+		
+		return "Item do Cafe= "+itemCafe;
+	}
 	
 	public int getId() {
 		return id;

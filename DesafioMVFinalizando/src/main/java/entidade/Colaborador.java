@@ -25,7 +25,7 @@ public class Colaborador {
 
 	@Override
 	public String toString() {
-		return "Colaborador [cpf=" + cpf + ", nome=" + nome + ", listaCafe=" + listaCafe + "]";
+		return "Colaborador [cpf= " + cpf + ", nome= " + nome + ", listaCafe= " + listaCafe + "]";
 	}
 	
 	public String getCpf() {

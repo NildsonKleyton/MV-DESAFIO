@@ -54,8 +54,9 @@ public class GeralDaoImpl implements GeralDao {
 	public List<Object> consulta(Object obj) {
 		EntityManager entM = JpaUtil.getEntityManager();
 		Query query = entM.createQuery("from " + obj.getClass().getSimpleName());
-		List<Object> listaClientes = query.getResultList();
-		return listaClientes;
+		List<Object> lista = query.getResultList();
+		entM.close();
+		return lista;
 	}
 
 	@Override
