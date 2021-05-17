@@ -13,7 +13,8 @@ public interface GeralDao {
 	public void inserir(Object obj);
 	public void atualizar(Object obj);
 	public Object remover(Object obj, Object chavePrimaria);
-	public List<Object> consulta(Object obj);
+	public List<Object> consultar(Object obj);
+//	public List<Colaborador> consultar(Colaborador colab);
 	public Object objExiste(Object obj);
 	
 }

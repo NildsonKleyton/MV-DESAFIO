@@ -13,29 +13,32 @@ import entidade.Colaborador;
 
 @ManagedBean(name = "colaboradorBean")
 @RequestScoped
-public class ColaboradoeBean {
+public class ColaboradorBean {
 
 	private Colaborador colaborador;
 	private CafeManha cafe;
 	private GeralDaoImpl geralDao;
-	private List<Colaborador> listarColaborador;
+	private List<Object> listaColaborador;
+//	private List<Colaborador> listaColaborador;
 	
-	public ColaboradoeBean() {
+	public ColaboradorBean() {
 		this.colaborador =new Colaborador();
 		this.cafe= new CafeManha();
 		this.geralDao = new GeralDaoImpl();
-		this.listarColaborador = new ArrayList<Colaborador>();
+		this.listaColaborador = new ArrayList<Object>();
+//		this.listaColaborador = new ArrayList<Colaborador>();
 	}
 	
 	//metodos
-	public void adicionar() {
+	public void inserir() {
 		this.geralDao.inserir(this.colaborador);
 		cafe.setColaborador(colaborador);
 		this.geralDao.inserir(this.cafe);
 	}
 
-	public void pesquisar() {
-		geralDao.consulta(this.colaborador);
+	public void consultar() {
+//		this.listaColaborador = geralDao.consultar(this.colaborador);
+		this.listaColaborador = geralDao.consultar((Object) this.colaborador);
 	}
 
 	public void editar() {
@@ -68,12 +71,14 @@ public class ColaboradoeBean {
 		this.geralDao = geralDao;
 	}
 
-	public List<Colaborador> getListarColaborador() {
-		return listarColaborador;
+	public List<Object> getListaColaborador() {
+		return listaColaborador;
 	}
-	public void setListarColaborador(List<Colaborador> listarColaborador) {
-		this.listarColaborador = listarColaborador;
+
+	public void setListaColaborador(List<Object> listaColaborador) {
+		this.listaColaborador = listaColaborador;
 	}
+
 
 
 

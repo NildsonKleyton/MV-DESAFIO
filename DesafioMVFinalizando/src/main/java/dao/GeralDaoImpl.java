@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 
+import entidade.Colaborador;
 import util.JpaUtil;
 
 public class GeralDaoImpl implements GeralDao {
@@ -51,7 +52,7 @@ public class GeralDaoImpl implements GeralDao {
 	}
 
 	@Override
-	public List<Object> consulta(Object obj) {
+	public List<Object> consultar(Object obj) {
 		EntityManager entM = JpaUtil.getEntityManager();
 		Query query = entM.createQuery("from " + obj.getClass().getSimpleName());
 		List<Object> lista = query.getResultList();
@@ -59,6 +60,15 @@ public class GeralDaoImpl implements GeralDao {
 		return lista;
 	}
 
+//	@Override
+//	public List<Colaborador> consultar(Colaborador colab) {
+//		EntityManager entM = JpaUtil.getEntityManager();
+//		Query query = entM.createQuery("from " + colab.getClass().getSimpleName());
+//		List<Colaborador> lista = query.getResultList();
+//		entM.close();
+//		return lista;
+//	}
+	
 	@Override
 	public Object objExiste(Object obj) {
 		EntityManager ent = JpaUtil.getEntityManager();

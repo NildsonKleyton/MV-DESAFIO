@@ -17,10 +17,10 @@
 				<p:toolbarGroup>
 					<!-- Botões  -->
 					<p:commandButton value="Adicionar" icon="pi pi-save"
-						action="#{colaboradorBean.adicionar}" update="@form"
+						action="#{colaboradorBean.inserir}" update="@form"
 						style="margin-right:5px;"></p:commandButton>
 					<p:commandButton value="Pesquisar" icon="pi pi-search"
-						actionListener="#{colaboradorBean.pesquisar}" update="@form"></p:commandButton>
+						actionListener="#{colaboradorBean.consultar}" update="@form"></p:commandButton>
 				</p:toolbarGroup>
 			</p:toolbar>
 
@@ -45,7 +45,7 @@
 			<!-- Tela da Lista -->
 			<p:fieldset legend="Lista de Clientes">
 				
-				<p:dataTable value="#{colaboradorBean.listarColaborador}" var="colaborador"
+				<p:dataTable value="#{colaboradorBean.listaColaborador}" var="colaborador"
 					 scrollable="true" scrollHeight="true" scrollWidth="100%" emptyMessage="Pressione pesquisa para buscar todos os clientes...">
 					
 					<p:column id="name" headerText="Nome" sortBy="#{colaborador.nome}">
