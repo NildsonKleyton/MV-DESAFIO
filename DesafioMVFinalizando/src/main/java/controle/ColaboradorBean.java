@@ -6,7 +6,6 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
-import dao.GeralDao;
 import dao.GeralDaoImpl;
 import entidade.CafeManha;
 import entidade.Colaborador;
@@ -19,30 +18,27 @@ public class ColaboradorBean {
 	private CafeManha cafe;
 	private GeralDaoImpl geralDao;
 	private List<Object> listaColaborador;
-//	private List<Colaborador> listaColaborador;
 	
 	public ColaboradorBean() {
 		this.colaborador =new Colaborador();
 		this.cafe= new CafeManha();
 		this.geralDao = new GeralDaoImpl();
 		this.listaColaborador = new ArrayList<Object>();
-//		this.listaColaborador = new ArrayList<Colaborador>();
 	}
 	
 	//metodos
-	public void inserir() {
+	public void adicionar() {
 		this.geralDao.inserir(this.colaborador);
 		cafe.setColaborador(colaborador);
 		this.geralDao.inserir(this.cafe);
 	}
 
-	public void consultar() {
-//		this.listaColaborador = geralDao.consultar(this.colaborador);
-		this.listaColaborador = geralDao.consultar((Object) this.colaborador);
+	public void pesquisar() {
+		this.listaColaborador = geralDao.listar((Object) this.colaborador);
 	}
 
 	public void editar() {
-		this.geralDao.atualizar(this.colaborador);
+		this.geralDao.alterar(this.colaborador);
 	}
 
 	public void remover() {

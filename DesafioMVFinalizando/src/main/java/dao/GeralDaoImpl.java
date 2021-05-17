@@ -24,7 +24,7 @@ public class GeralDaoImpl implements GeralDao {
 	}
 
 	@Override
-	public void atualizar(Object obj) {
+	public void alterar(Object obj) {
 
 		EntityManager entM = JpaUtil.getEntityManager();
 		EntityTransaction entT = entM.getTransaction();
@@ -52,22 +52,13 @@ public class GeralDaoImpl implements GeralDao {
 	}
 
 	@Override
-	public List<Object> consultar(Object obj) {
+	public List<Object> listar(Object obj) {
 		EntityManager entM = JpaUtil.getEntityManager();
 		Query query = entM.createQuery("from " + obj.getClass().getSimpleName());
 		List<Object> lista = query.getResultList();
 		entM.close();
 		return lista;
 	}
-
-//	@Override
-//	public List<Colaborador> consultar(Colaborador colab) {
-//		EntityManager entM = JpaUtil.getEntityManager();
-//		Query query = entM.createQuery("from " + colab.getClass().getSimpleName());
-//		List<Colaborador> lista = query.getResultList();
-//		entM.close();
-//		return lista;
-//	}
 	
 	@Override
 	public Object objExiste(Object obj) {

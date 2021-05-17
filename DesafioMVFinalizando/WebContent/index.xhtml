@@ -17,10 +17,10 @@
 				<p:toolbarGroup>
 					<!-- Botões  -->
 					<p:commandButton value="Adicionar" icon="pi pi-save"
-						action="#{colaboradorBean.inserir}" update="@form"
+						action="#{colaboradorBean.adicionar}" update="@form"
 						style="margin-right:5px;"></p:commandButton>
 					<p:commandButton value="Pesquisar" icon="pi pi-search"
-						actionListener="#{colaboradorBean.consultar}" update="@form"></p:commandButton>
+						actionListener="#{colaboradorBean.pesquisar}" update="@form"></p:commandButton>
 				</p:toolbarGroup>
 			</p:toolbar>
 
@@ -36,22 +36,24 @@
 					<p:inputText value="#{colaboradorBean.colaborador.cpf}"></p:inputText>
 
 					<h:outputLabel value="Café da Manhã"></h:outputLabel>
-					<p:inputTextarea value="#{colaboradorBean.cafe.itemCafe}"
-						rows="3" cols="22" maxlength="4000"
+					<p:inputTextarea value="#{colaboradorBean.cafe.itemCafe}" rows="3"
+						cols="22" maxlength="4000"
 						counterTemplate="{0} Maximo de Caracteres." autoResize="false" />
 				</p:panelGrid>
 			</p:fieldset>
 			<br />
 			<!-- Tela da Lista -->
 			<p:fieldset legend="Lista de Clientes">
-				
-				<p:dataTable value="#{colaboradorBean.listaColaborador}" var="colaborador"
-					 scrollable="true" scrollHeight="true" scrollWidth="100%" emptyMessage="Pressione pesquisa para buscar todos os clientes...">
-					
+
+				<p:dataTable value="#{colaboradorBean.listaColaborador}"
+					var="colaborador" scrollable="true" scrollHeight="true"
+					scrollWidth="100%"
+					emptyMessage="Pressione pesquisa para buscar todos os clientes...">
+
 					<p:column id="name" headerText="Nome" sortBy="#{colaborador.nome}">
 						<h:outputText value="#{colaborador.nome}"></h:outputText>
 					</p:column>
-				
+
 					<p:column headerText="CPF" sortBy="#{colaborador.cpf}">
 						<h:outputText value="#{colaborador.cpf}"></h:outputText>
 					</p:column>
@@ -66,7 +68,7 @@
 						<p:commandButton action="#{colaboradorBean.remover}"
 							update="@form" icon="pi pi-trash" title="Remover"></p:commandButton>
 					</p:column>
-				
+
 				</p:dataTable>
 			</p:fieldset>
 
