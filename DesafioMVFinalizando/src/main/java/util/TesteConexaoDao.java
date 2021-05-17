@@ -32,7 +32,7 @@ public class TesteConexaoDao {
 //		dao.inserir(cf1);
 		
 		
-		System.out.println(dao.consulta(cb));
+		System.out.println(dao.consultar(cb));
 		
 	}
 
